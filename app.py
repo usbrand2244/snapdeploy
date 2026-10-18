@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Try a working VidSrc domain. vidsrc.to often has issues.
 # Other known domains: vidsrc.net, vidsrc.xyz, vidsrc.in, vidsrc.pm
-VIDSRC_MOVIE_URL = "https://vidsrc.xyz/embed/movie/{}"
+VIDSRC_MOVIE_URL = "https://vidsrc.to/embed/movie/{}"
 
 
 async def extract_m3u8(imdb_id: str):
