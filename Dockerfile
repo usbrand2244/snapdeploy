@@ -1,5 +1,5 @@
-# Dockerfile
-FROM mcr.microsoft.com/playwright:v1.52.0-noble
+# Use the official Playwright image for Python (includes pip & Chromium deps)
+FROM mcr.microsoft.com/playwright/python:v1.52.0-noble
 
 WORKDIR /app
 
@@ -10,8 +10,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the application code
 COPY . .
 
-# Railway provides $PORT; default to 8000 if not set
-ENV PORT=8000
+# Expose the port (SnapDeploy auto-detects this, but it's good practice)
+EXPOSE 8000
 
 # Start the Flask app
 CMD ["python", "app.py"]
